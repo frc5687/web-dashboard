@@ -1,0 +1,28 @@
+.status {
+  border-style: inset;
+}
+
+.graph-div {
+  border-style: inset;
+}
+
+#direction-indicator {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+  width: auto;
+  margin-top: 10px;
+}
+
+#trackingSquare {
+    background: red;
+    height: 10px;
+    width: 10px;
+}
+
+#trackingDiv {
+    height: 200px;
+    width: 200px;
+    border-style: inset
+}
