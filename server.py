@@ -27,6 +27,7 @@ def init_networktables(ipaddr):
     NetworkTable.initialize()
     logger.info("Networktables Initialized")
 
+
 @asyncio.coroutine
 def forward_request(request):
     return web.HTTPFound("/index.html")
@@ -42,7 +43,7 @@ if __name__ == '__main__':
     parser.add_option('-v', '--verbose', default=False, action='store_true',
                       help='Enable verbose logging')
 
-    parser.add_option('--robot', default='10.56.87.21',
+    parser.add_option('--robot', default='10.56.87.104',
                       help="Robot's IP address")
 
     options, args = parser.parse_args()
@@ -79,4 +80,3 @@ if __name__ == '__main__':
         loop.run_forever()
     except KeyboardInterrupt:
         pass
-

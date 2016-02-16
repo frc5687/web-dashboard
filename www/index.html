@@ -28,7 +28,7 @@
 				<p id="enabledStatus">No Robot Connection</p>
 			</div>
 			<div class="col s3 status">
-				<p>Blank</p>
+				<p id="gitInfo">Version: Unknown</p>
 			</div>
 		</div>
 		<div class="row">
@@ -43,16 +43,19 @@
 			</div>
 		</div>
 		<div class="row">
-            <div class="input-field col s4">
-                <select id="autoModeSelect">
-                </select>
-                <label>Autonomous Mode Chooser</label>
+			<div class="col s4">
+                <form action="#" id="autoModeForm">
+                    <p></p>
+                </form>
             </div>
             <div class="col s4">
                 <div id="trackingDiv">
                     <div id="trackingSquare">.</div>
                 </div>
             </div>
+			<div class="col s4">
+				<meter value="2" min="0" max="10">meow</meter>
+			</div>
         </div>
 		<div class="row">
 			<div class="col s6">
