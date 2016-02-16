@@ -78,14 +78,23 @@ function onValueChanged(key, value, isNew) {
             case "/GRIP/tracking/centerX":
             case "/GRIP/tracking/centerY":
             case "/SmartDashboard/Autonomous mode/options":
-                var tr = $('<tr></tr>').appendTo($('#specific_table > tbody:last'));
-                $('<td></td>').text(key).appendTo(tr);
-                $('<td></td>').attr('id', NetworkTables.keyToId(key)).text(value).appendTo(tr);
+            case "/SmartDashboard/Autonomous mode/selected":
+                if ($('#' + NetworkTables.keySelector(key)).length) {
+                    $('#' + NetworkTables.keySelector(key)).text(value);
+                } else {
+                    var tr = $('<tr></tr>').appendTo($('#specific_table > tbody:last'));
+                    $('<td></td>').text(key).appendTo(tr);
+                    $('<td></td>').attr('id', NetworkTables.keyToId(key)).text(value).appendTo(tr);
+                }
                 break;
             default:
-                var tr = $('<tr></tr>').appendTo($('#normal_table > tbody:last'));
-                $('<td></td>').text(key).appendTo(tr);
-                $('<td></td>').attr('id', NetworkTables.keyToId(key)).text(value).appendTo(tr);
+                if ($('#' + NetworkTables.keySelector(key)).length) {
+                    $('#' + NetworkTables.keySelector(key)).text(value);
+                } else {
+                    var tr = $('<tr></tr>').appendTo($('#normal_table > tbody:last'));
+                    $('<td></td>').text(key).appendTo(tr);
+                    $('<td></td>').attr('id', NetworkTables.keyToId(key)).text(value).appendTo(tr);
+                }
                 break;
         }
     } else {
